@@ -1,9 +1,10 @@
-import "../src/style.css";
+import "./style.css";
 
 const gameMainDiv = document.querySelector("#game-grid");
 const gameGridItems = document.querySelectorAll(".items");
 const heading = document.querySelector("#player-turn");
 const winsDiv = document.querySelector(".win");
+
 const gameBoard = {
   board: [],
 };
