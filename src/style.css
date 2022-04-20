@@ -5,8 +5,9 @@ body{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     text-align: center;
-    margin: auto;
-    padding:30px 35% 0 35%;
+    /* margin: auto; */
+    margin:30px 35% 0 35%;
+    
 }
 .items{
     border: solid black 1px;
