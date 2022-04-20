@@ -38,7 +38,7 @@ function display(e) {
       winner();
     }
     if (winsDiv.innerText == "x wins!!") {
-      body.removeEventListener("click", fun);
+      body.removeEventListener("click", display);
     }
   } else if (heading.innerText == "player2") {
     if (gridBox.className == "items" && count % 2 == 1 && count < 10) {
@@ -52,7 +52,7 @@ function display(e) {
     winner();
   }
   if (winsDiv.innerText == "x wins!!") {
-    body.removeEventListener("click", fun);
+    body.removeEventListener("click", display);
   }
 }
 const winner = function () {
