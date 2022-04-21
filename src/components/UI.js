@@ -5,11 +5,13 @@ import {
   player1Marker,
   player2Marker,
   turn,
+  tie,
   toggleTurn,
   getActivePlayerMarker,
   playerChance,
   changeTurn,
-  ifWinner
+  ifWinner,
+  checkTie,
 } from "./board";
 
 const gameMainDiv = document.querySelector("#game-grid");
@@ -26,12 +28,16 @@ function display(e) {
   const index = gridBox.getAttribute("data-index");
   if (turn && gridCells[index]==null) {
     heading.innerText = "player" + "(" + playerChance() + ")'s chance";
-    gridBox.innerText = getActivePlayerMarker();
     gridCells[index] = getActivePlayerMarker();
+    gridBox.innerText = gridCells[index];
     console.log(gridCells);
     toggleTurn();
   }
   checkWinner();
+  // if(checkTie()){
+  //   // winsDiv.innerText=tie;
+  //   console.log('hi')
+  // }
 
 }
 
