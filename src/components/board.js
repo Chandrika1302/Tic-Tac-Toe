@@ -1,4 +1,6 @@
 import { checkWinner } from "./helpers";
+import { winsDiv} from "./UI";
+
 const gridCells = Array(9).fill(null);
 //turn
 let player1Marker = "X";
@@ -33,9 +35,9 @@ function playerChance() {
   } else return player1Marker;
 }
 function checkTie(){
- const tie= gridCells.every(element => element !== null)
- if(tie){
-   console.log('evil laughs!');
+ const gameTie= gridCells.every(element => element !== null)
+ if(gameTie){
+   return winsDiv.innerText=tie;
  }
 }
 
