@@ -1,5 +1,5 @@
 //import state fro mthtat file
-import { checkWinner } from "./helpers";
+import { resetGame,checkWinner } from "./helpers";
 import {
   gridCells,
   player1Marker,
@@ -18,30 +18,41 @@ const gameMainDiv = document.querySelector("#game-grid");
 const gameGridItems = document.querySelectorAll(".items");
 const heading = document.querySelector("#player-turn");
 const winsDiv = document.querySelector(".win");
-// all dom elements
-gameMainDiv.addEventListener("click", display);
-heading.innerText="player" + "(" + player1Marker + ")'s chance"
 
-function display(e) {
-  
+const reset=document.createElement("button");
+reset.innerText="Reset";
+document.body.appendChild(reset);
+reset.addEventListener('click',resetGame);
+
+// all dom elements
+gameMainDiv.addEventListener("click",init);
+heading.innerText="player" + "(" + player1Marker + ")'s chance";
+
+
+function display(gameBox,i){
+  if(i==null){
+    heading.innerText="player" + "(" + player1Marker + ")'s chance";
+    for(let k=0;k<gridCells.length;k++){
+      gameGridItems[k].innerText="";
+    }
+  }
+  else gameBox.innerText=gridCells[i];
+
+}
+function init(e) { 
   const gridBox = e.target;
   const index = gridBox.getAttribute("data-index");
   if (turn && gridCells[index]==null) {
     heading.innerText = "player" + "(" + playerChance() + ")'s chance";
     gridCells[index] = getActivePlayerMarker();
-    gridBox.innerText = gridCells[index];
-    console.log(gridCells);
+    display(gridBox,index);
     toggleTurn();
   }
   checkWinner();
-  // if(checkTie()){
-  //   // winsDiv.innerText=tie;
-  //   console.log('hi')
-  // }
-
+  checkTie();
 }
 
-export { display,winsDiv,gameMainDiv };
+export { init,display,winsDiv,gameMainDiv };
 
 //add eventlistening to main element-->
 
