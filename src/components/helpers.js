@@ -1,22 +1,18 @@
-import { gridCells, player1Marker, player2Marker } from "./board";
+import { gridCells, player1Marker, player2Marker,turn } from "./board";
 import { winsDiv,display,gameMainDiv } from "./UI";
 
 //reset
 
 //reset the baord->display();
-
+function resetGame(){
+  for(let i=0;i<9;i++){
+     gridCells[i]=null;
+    }
+    display();
+}
 // checkwinner
 
 function checkWinner() {
-  console.log('diagonal1',checkDiagonal(player1Marker));
-  console.log('hor1',checkHorizontal(player1Marker));
-  console.log('ver1',checkVertical(player1Marker));
-
-  console.log('diagonal2',checkDiagonal(player1Marker));
-  console.log('hor2',checkHorizontal(player1Marker));
-  console.log('ver2',checkVertical(player1Marker));
-
-  
   if (
     checkDiagonal(player1Marker) ||
     checkHorizontal(player1Marker) ||
@@ -36,7 +32,7 @@ function checkWinner() {
   function checkHorizontal(symbol) {
 
     let flag = false;
-    for (let i = 0; i < 7; i+=3) { //wow, i think there be 3
+    for (let i = 0; i < 7; i+=3) { 
       if (
         gridCells[i] === symbol &&
         gridCells[i] === gridCells[i + 1] &&
@@ -81,4 +77,4 @@ function checkWinner() {
     return flag;
   }
 }
-export { checkWinner };
+export { resetGame,checkWinner };
