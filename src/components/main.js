@@ -1,6 +1,2 @@
-import { display } from "./UI";
-import {checkWinner} from "./helpers"
-function init(){
-    display();
-}
+import { init } from "./UI";
 init();
