@@ -1,3 +1,3 @@
-import { display } from "./components/UI";
-import '../src/style.css';
-// display();
+import { init } from "./components/UI";
+import './style.css';
+init();
