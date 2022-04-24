@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+}
+.game-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    /* margin: auto; */
+    margin:30px 35% 0 35%;
+    
+}
+.items{
+    border: solid black 1px;
+    padding: 40px;
+    background-color: aquamarine;
+}
+.items:hover{
+    background-color: aqua;
+}
