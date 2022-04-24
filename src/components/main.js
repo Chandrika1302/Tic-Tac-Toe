@@ -1,2 +1,4 @@
-import { init } from "./UI";
-init();
+// import { init } from "./UI";
+// init();
+
+//no need of these

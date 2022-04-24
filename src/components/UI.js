@@ -30,6 +30,7 @@ heading.innerText="player" + "(" + player1Marker + ")'s chance";
 
 
 function display(gameBox,i){
+  
   if(i==null){
     heading.innerText="player" + "(" + player1Marker + ")'s chance";
     for(let k=0;k<gridCells.length;k++){
