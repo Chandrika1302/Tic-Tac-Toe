@@ -18,11 +18,9 @@ const gameMainDiv = document.querySelector("#game-grid");
 const gameGridItems = document.querySelectorAll(".items");
 const heading = document.querySelector("#player-turn");
 const winsDiv = document.querySelector(".win");
+const resetButton=document.querySelector("#reset-btn")
 
-const reset=document.createElement("button");
-reset.innerText="Reset";
-document.body.appendChild(reset);
-reset.addEventListener('click',resetGame);
+resetButton.addEventListener('click',resetGame);
 
 // all dom elements
 gameMainDiv.addEventListener("click",init);

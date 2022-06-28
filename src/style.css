@@ -17,3 +17,11 @@ body{
 .items:hover{
     background-color: aqua;
 }
+#reset-btn{
+    background-color: red;
+    width: 50px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 5px;
+    padding: 5px;
+}
